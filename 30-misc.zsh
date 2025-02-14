@@ -1,7 +1,14 @@
 # cd to home and one path up directly
 # cdpath=(~ .. ~/space)
 
+# Added aliases for finding and editing readme files
+
+alias -g read="nano README.md"
+alias -g bread="bat README.md"
+alias -g fread="fzf $PATH/**/README.md"
+
 ## search for various types or README file in dir and display them in $PAGER
+
 readme ()
 {
     local files
@@ -20,7 +27,7 @@ REPORTTIME=2
 # This is the default TIMEFORMAT string, but with a bell. Ding ding. :)
 TIMEFORMAT="%J  %U user %S system %P cpu %*E total"$'\a'
 
-function cs() { cd "$1" && ls }
+function cs() { cd "$1" && lsd -a }
 function mkcd() { mkdir "$1" && cd "$1"; }
 
 function hex2dec { awk 'BEGIN { printf "%d\n",0x$1}'; }
