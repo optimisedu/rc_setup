@@ -5,7 +5,7 @@
 
 alias -g read="nano README.md"
 alias -g bread="bat README.md"
-alias -g fread="fzf $PATH/**/README.md"
+alias -g fread="fzf $dir/**/README.md"
 
 ## search for various types or README file in dir and display them in $PAGER
 
